@@ -1,6 +1,12 @@
 {
   "version": 1,
   "skills": {
+    "bahasa-indonesia": {
+      "source": "local",
+      "sourceType": "local",
+      "skillPath": "skills/bahasa-indonesia/SKILL.md",
+      "computedHash": "f1c679a1903cd5c2df7766df30a58c37e06906ba0a9bbb1624c7000cc2721729"
+    },
     "cavecrew": {
       "source": "JuliusBrussee/caveman",
       "sourceType": "github",

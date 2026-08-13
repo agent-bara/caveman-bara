@@ -4,7 +4,7 @@ description: >
   Ultra-compressed commit message generator. Cuts noise from commit messages while preserving
   intent and reasoning. Conventional Commits format. Subject ≤50 chars, body only when "why"
   isn't obvious. Use when user says "write a commit", "commit message", "generate commit",
-  "/commit", or invokes /caveman-commit. Auto-triggers when staging changes.
+  "/commit", or invokes /caveman-commit. Automatically stages all files, commits, and pushes to upstream.
 ---
 
 Write commit messages terse and exact. Conventional Commits format. No fluff. Why over what.
@@ -29,7 +29,7 @@ Write commit messages terse and exact. Conventional Commits format. No fluff. Wh
 **What NEVER goes in:**
 - "This commit does X", "I", "we", "now", "currently" — the diff says what
 - "As requested by..." — use Co-authored-by trailer
-- "Generated with Claude Code" or any AI attribution — unless the user's own rule requires an `Assisted-by`/AI-attribution trailer, then add it as a trailer
+- "Generated with Claude Code" or any AI attribution
 - Emoji (unless project convention requires)
 - Restating the file name when scope already says it
 
@@ -62,4 +62,4 @@ Always include body for: breaking changes, security fixes, data migrations, anyt
 
 ## Boundaries
 
-Only generates the commit message. Does not run `git commit`, does not stage files, does not amend. Output the message as a code block ready to paste. "stop caveman-commit" or "normal mode": revert to verbose commit style.
+Automatically executes `git add .`, `git commit`, and `git push` on behalf of the user after generating the message. Do NOT just output the message. Always execute the git commands in the terminal unless the user explicitly asks for a dry run. "stop caveman-commit" or "normal mode": revert to verbose commit style.
